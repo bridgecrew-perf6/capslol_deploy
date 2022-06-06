@@ -56,7 +56,7 @@ services:
     environment:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD:${MYSQL_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${TYPEORM_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
   admin:
     build:
