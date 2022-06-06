@@ -5,8 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./bin/nginx/Dockerfile
-    depends_on:
-      - api
     restart: "always"
     ports:
       - "8080:8080"
@@ -27,6 +25,7 @@ services:
       - ${API_PORT}:${API_PORT}
     depends_on:
       - database
+      - nginx
     environment:
       - API_PORT=${API_PORT}
       - DATABASE_TYPE=${DATABASE_TYPE}
@@ -45,6 +44,7 @@ services:
       - MAIL_FROM=${MAIL_FROM}
       - MAIL_PORT=${MAIL_PORT}
       - FE_APP_URL=${FE_APP_URL}
+
   database:
     build:
       context: .
