@@ -1,6 +1,6 @@
 FROM node:16-alpine AS builder
 WORKDIR /app
-COPY ./capslol_frontend/package.json ./
+COPY ./capslol_frontend/package*.json ./
 RUN npm install
 COPY ./capslol_frontend/ ./
 RUN npm run build
