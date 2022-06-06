@@ -3,7 +3,7 @@ WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
 COPY ./capslol_frontend/ ./
-RUN npm run build
+RUN npm run build --openssl-legacy-provider
 
 # production environment
 FROM nginx:1.19.10-alpine AS server
