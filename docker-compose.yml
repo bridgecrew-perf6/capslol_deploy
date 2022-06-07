@@ -17,7 +17,7 @@ services:
       - ./bin/nginx/default.conf:/etc/nginx/default.conf
     environment:
       - REACT_APP_GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-      - REACT_APP_PROD_SERVER_URL=${REACT_APP_PROD_SERVER_URL}
+      - REACT_APP_SERVER_URL=${REACT_APP_PROD_SERVER_URL}
 
   api:
     build:
