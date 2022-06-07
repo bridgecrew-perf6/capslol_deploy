@@ -1,1 +1,7 @@
 .env
+
+#production invironment
+capslol_backend/
+capslol_frontend/
+data/
+logs/

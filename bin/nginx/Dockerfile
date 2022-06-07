@@ -1,4 +1,8 @@
 FROM node:16-alpine AS builder
+ARG clientId
+ARG productionURL
+ENV REACT_APP_GOOGLE_CLIENT_ID=${clientId}
+ENV REACT_APP_PROD_SERVER_URL=${productionURL}
 WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
