@@ -1,12 +1,9 @@
 FROM node:16-alpine AS builder
-ENV REACT_APP_GOOGLE_CLIENT_ID=${REACT_APP_GOOGLE_CLIENT_ID}
-ENV REACT_APP_SERVER_URL=${REACT_APP_SERVER_URL}
-RUN echo "running $clientId"
-RUN echo "running builder"
+WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
 COPY ./capslol_frontend/ ./
-RUN npm run build
+CMD ["npm", "run", "build"]
 
 # production environment
 FROM nginx:1.19.10-alpine AS server
