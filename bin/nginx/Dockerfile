@@ -5,10 +5,10 @@ RUN npm install --production
 COPY ./capslol_frontend/ ./
 CMD ["npm", "run", "build"]
 
-# production environment
-FROM nginx:1.19.10-alpine AS server
-COPY --from=builder /app/build /usr/share/nginx/html
-EXPOSE 80
-EXPOSE 8080
-EXPOSE 443
-CMD ["nginx", "-g", "daemon off;"]
+# # production environment
+# FROM nginx:1.19.10-alpine AS server
+# COPY --from=builder ./app/build /usr/share/nginx/html
+# EXPOSE 80
+# EXPOSE 8080
+# EXPOSE 443
+# CMD ["nginx", "-g", "daemon off;"]
