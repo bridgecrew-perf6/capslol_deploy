@@ -3,8 +3,9 @@ WORKDIR /app
 COPY ./capslol_backend/package*.json ./
 RUN npm install
 COPY ./capslol_backend/ ./
-RUN npm run migration:run
 RUN npm run build
+RUN npm run migration:run
+
 
 FROM node:17-alpine AS server
 WORKDIR /app
