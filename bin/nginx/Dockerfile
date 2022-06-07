@@ -3,7 +3,7 @@ ARG clientId
 FROM node:16-alpine AS builder
 ENV REACT_APP_GOOGLE_CLIENT_ID=${clientId}
 ENV REACT_APP_SERVER_URL=${REACT_APP_SERVER_URL}
-RUN echo "running ${REACT_APP_SERVER_URL}"
+RUN echo "running $clientId"
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
 COPY ./capslol_frontend/ ./
