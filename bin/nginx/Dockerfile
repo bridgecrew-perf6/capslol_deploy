@@ -1,7 +1,7 @@
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
-RUN npm install
+RUN npm install --production
 COPY ./capslol_frontend/ ./
 CMD ["npm", "run", "build"]
 
