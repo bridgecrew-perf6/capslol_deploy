@@ -3,6 +3,8 @@ ARG clientId
 ARG productionURL
 ENV REACT_APP_GOOGLE_CLIENT_ID=${clientId}
 ENV REACT_APP_PROD_SERVER_URL=${productionURL}
+RUN echo ${clientId}
+RUN echo ${REACT_APP_GOOGLE_CLIENT_ID}
 WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
