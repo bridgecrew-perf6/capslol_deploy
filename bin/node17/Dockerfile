@@ -3,8 +3,7 @@ WORKDIR /app
 COPY ./capslol_backend/package*.json ./
 RUN npm install
 COPY ./capslol_backend/ ./
-RUN npm run build
-CMD [ "npm", "run", "migration:run" ]
+CMD [ "npm", "run", "migration:run", "&&", "npm", "run", "build" ]
 
 
 FROM node:17-alpine AS server

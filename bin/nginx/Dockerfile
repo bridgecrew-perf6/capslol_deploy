@@ -1,14 +1,14 @@
-FROM node:16-alpine AS builder
+FROM node:17-alpine AS builder
 WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install --production
 COPY ./capslol_frontend/ ./
-CMD ["npm", "run", "build"]
+CMD [ "npm", "run", "build" ]
 
-# # production environment
-# FROM nginx:1.19.10-alpine AS server
-# COPY --from=builder ./app/build /usr/share/nginx/html
-# EXPOSE 80
-# EXPOSE 8080
-# EXPOSE 443
-# CMD ["nginx", "-g", "daemon off;"]
+# production environment
+FROM nginx:1.19.10-alpine AS server
+COPY --from=builder /app/build /usr/share/nginx/html
+EXPOSE 80
+EXPOSE 8080
+EXPOSE 443
+CMD ["nginx", "-g", "daemon off;"]
