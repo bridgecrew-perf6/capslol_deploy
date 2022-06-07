@@ -5,6 +5,9 @@ services:
     build:
       context: .
       dockerfile: ./bin/nginx/Dockerfile
+      args:
+        - REACT_APP_GOOGLE_CLIENT_ID:${GOOGLE_CLIENT_ID}
+        - REACT_APP_PROD_SERVER_URL:${REACT_APP_PROD_SERVER_URL}
     restart: "always"
     ports:
       - "8080:8080"

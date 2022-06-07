@@ -3,6 +3,7 @@ WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
 COPY ./capslol_frontend/ ./
+
 RUN npm run build
 
 # production environment
