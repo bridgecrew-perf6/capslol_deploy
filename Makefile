@@ -1,7 +1,7 @@
 up:
 	docker-compose up -d 
 build: 
-	docker-compose up --build
+	docker-compose up --build --detach
 dev: 
 	docker-compose -f docker-compose.dev.yml up -d
 build-dev: 
