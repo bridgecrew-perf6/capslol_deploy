@@ -3,7 +3,7 @@ WORKDIR /app
 COPY ./capslol_frontend/package*.json ./
 RUN npm install --production
 COPY ./capslol_frontend/ ./
-CMD [ "npm", "run", "build" ]
+RUN npm run build
 
 # production environment
 FROM nginx:1.19.10-alpine AS server
