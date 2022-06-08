@@ -1,7 +1,9 @@
 FROM node:17-alpine AS builder
 WORKDIR /app
-ENV REACT_APP_GOOGLE_CLIENT_ID=361222498523-k30tc2octab8mtoahcbb899fqs5j53pa.apps.googleusercontent.com
-ENV REACT_APP_SERVER_URL=http://159.223.1378:8080/
+ARG clientId
+ARG productionURL
+ENV REACT_APP_GOOGLE_CLIENT_ID=${clientId}
+ENV REACT_APP_SERVER_URL=${productionURL}
 COPY ./capslol_frontend/package*.json ./
 RUN npm install
 COPY ./capslol_frontend/ ./
