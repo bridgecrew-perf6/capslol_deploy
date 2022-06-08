@@ -58,6 +58,8 @@ services:
       dockerfile: "./bin/${MYSQL8}/Dockerfile"
     container_name: "${PROJECT_NAME}-${MYSQL8}"
     restart: "always"
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
     volumes:
       - ./data:/var/lib/mysql
     environment:
