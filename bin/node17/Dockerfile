@@ -13,4 +13,5 @@ EXPOSE 3000
 RUN npm install --production
 RUN npm install pm2 -g
 COPY --from=builder ./app/dist ./build
+RUN  npm run seed:run
 CMD ["pm2-runtime", "./build/main.js"]

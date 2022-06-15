@@ -75,17 +75,15 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
-  # admin:
-  #   build:
-  #     context: .
-  #     dockerfile: "./bin/${PHP_ADMIN}/Dockerfile"
-  #   container_name: "${PROJECT_NAME}-${PHP_ADMIN}"
-  #   restart: "always"
-  #   depends_on:
-  #     - database
-  #   environment:
-  #     - PMA_HOST=${PMA_HOST}
-  #     - PMA_USER=${PMA_USER}
-  #     - PMA_PASSWORD=${PMA_PASSWORD}
-  #   ports:
-  #     - "5050:5050"
+  admin:
+    build:
+      context: .
+      dockerfile: "./bin/${PHP_ADMIN}/Dockerfile"
+    container_name: "${PROJECT_NAME}-${PHP_ADMIN}"
+    restart: "always"
+    depends_on:
+      - database
+    environment:
+      - PMA_HOST=${PMA_HOST}
+    ports:
+      - "5050:5050"
