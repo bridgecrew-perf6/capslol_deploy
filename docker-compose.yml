@@ -8,7 +8,6 @@ services:
       args:
         - clientId=${GOOGLE_CLIENT_ID}
         - productionURL=${REACT_APP_PROD_SERVER_URL}
-        - socketURL=${REACT_APP_SOCKET_PROD_URL}
     container_name: "nginx"
     restart: "always"
     ports:
