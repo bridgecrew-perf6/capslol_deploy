@@ -6,7 +6,7 @@ ENV REACT_APP_GOOGLE_CLIENT_ID=${clientId}
 ENV REACT_APP_SERVER_URL=${productionURL}
 ENV REACT_APP_SOCKET_PROD_URL=${productionURL}
 COPY ./capslol_frontend/package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 COPY ./capslol_frontend/ ./
 RUN npm run build
 
