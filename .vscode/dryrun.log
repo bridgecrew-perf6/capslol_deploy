@@ -1,0 +1,4 @@
+make: Entering directory `/Users/mo45/Dev/Pets/capslol_deploy'
+docker-compose up -d 
+make: Leaving directory `/Users/mo45/Dev/Pets/capslol_deploy'
+ 
