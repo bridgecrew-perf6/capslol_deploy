@@ -7,7 +7,9 @@ services:
       dockerfile: ./bin/nginx/Dockerfile
       args:
         - clientId=${GOOGLE_CLIENT_ID}
-        - productionURL=${REACT_APP_PROD_SERVER_URL}
+        - productionURL=${REACT_APP_SERVER_URL}
+        - socketURL=${REACT_APP_SOCKET_URL}
+
     container_name: "nginx"
     restart: "always"
     ports:
